@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Mensagem Animada</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style1.css') }}">
+</head>
+<body>
+	<script src="/static/matrix.js"></script>
+    {% if message_received %}
+        <div class="animated-message">Mensagem recebida com sucesso!</div>
+    {% endif %}
+
+    {% if Payload %}
+        <div class="animated-message">Mensagem <div>{{ SSTI | safe }}</div> postada com sucesso!</div>
+    {% endif %}
+
+    {% if Name %}
+        <div class="animated-message">Usuário <div>{{ PARAM | safe }}</div> Logado com sucesso!</div>
+
+    {% endif %}
+
+    
+</body>
+</html>
